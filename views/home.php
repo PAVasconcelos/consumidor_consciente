@@ -18,11 +18,25 @@
                 <a class="nav-list" href="#home"><img class="nav-icons" src="../img/icons/contacts.png" alt=""><li>CONTACTOS</li></a>
             </ul>
         </nav>
+
+        <ul>
+          
+        <?php
+            foreach($posts as $post) {
+        ?>
+            <div class="posts">
+              <div class="post-id"><?php echo $post["post_id"]; ?></div>
+              <div class="post-title"><?php echo $post["post_title"]; ?></div>
+        <?php
+            }
+        ?>
+
+        </ul>
         
         <article class="container">
             <h1>10 melhores carros a baixo 4000€</h1>
             <article class="browser">
-              <h2>Vowlkswagen Golf 4</h2>
+              <h2>Volkswagen Golf 4</h2>
               <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
             </article>
             <article class="browser">
