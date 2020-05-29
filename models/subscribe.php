@@ -5,7 +5,7 @@ require("../models/base.php");
 class Subscribe extends Base {
 
     public function subscriber($data) {
-        
+        $data = $this->sanitizer($data);
         if(
             !empty($data["email"]) &&
             filter_var($data["email"], FILTER_VALIDATE_EMAIL) &&

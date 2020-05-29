@@ -17,4 +17,5 @@ class Posts extends Base {
 
         return $posts;
     } 
+
 }
