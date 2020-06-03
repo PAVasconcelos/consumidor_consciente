@@ -1,6 +1,6 @@
 <?php
 
-require("../models/base.php");
+require("models/base.php");
 
 class Subscribe extends Base {
 

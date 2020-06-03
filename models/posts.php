@@ -1,6 +1,6 @@
 <?php
 
-require("../models/base.php");
+require("models/base.php");
 
 class Posts extends Base {
 
@@ -16,6 +16,6 @@ class Posts extends Base {
         $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 
         return $posts;
-    } 
+    }
 
 }
