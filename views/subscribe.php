@@ -22,9 +22,9 @@
         <div class="subscribe">
             <h1>Subscreva a nossa newsletter</h1>
             <h2>Fique a par de todas as novidades e promoções!</h2>
-            <form method="post" action="../controllers/subscribe.php">
-                <input placeholder=" Email" type="text" name="email"><br>          
-                <input placeholder=" Nome" type="text" name="name"><br>
+            <form method="post" action="/subscribe">
+                <input placeholder=" Email" type="text" name="email" maxlength="252"><br>          
+                <input placeholder=" Nome" type="text" maxlength="100" name="name"><br>
                 <button class="submit-button" type="submit" name="send">Subscrever!</button>
             </form>
         </div>

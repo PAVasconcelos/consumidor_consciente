@@ -13,7 +13,7 @@
    $controller = "home";
 
    // white list de controllers
-   $controllers = ["home", "subscribe", "contacts"];
+   $controllers = ["home", "subscribe", "contacts", "access", "boss"];
 
    if(isset($url_parts[1]) && in_array($url_parts[1], $controllers)) {
       $controller = $url_parts[1]; 
