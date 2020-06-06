@@ -8,30 +8,33 @@ class Users extends Base {
         $data = $this->sanitizer($data);
 
         if(
-            !empty($data["username"]) &&
-            !empty($data["password"]) &&
-            mb_strlen($data["password"]) <= 1000
+            !empty($data["username"]) //&&
+            //!empty($data["password"]) &&
+            //mb_strlen($data["password"]) <= 1000
         ) {
             $query = $this->db->prepare("
-                SELECT user_name, user_password 
+                SELECT user_name 
                 FROM users
-                WHERE user_name = ?, user_password = ?
+                WHERE user_name = ?
             ");
 
             $query->execute([
-                $data["username"],
-                $data["password"]
+                $data["username"]
             ]);
 
             $user = $query->fetch(PDO::FETCH_ASSOC);
 
-            if(!empty($user)) {
-                $_SESSION["username"] = $user["username"];
+            print_r($user);
+            
+            if(!empty($user) ) {
+                $_SESSION["name"] = $data["username"];
 
                 echo 'Login';
 
-                return $user;
+                return true;
             }
+
+            return false;
         }
     }
 }

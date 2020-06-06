@@ -18,4 +18,22 @@ class Posts extends Base {
         return $posts;
     }
 
+    public function creatPost($data) {
+        $data = $this->sanitizer($data);
+        if (!empty($data["title"]) && !empty($data["content"])) {      
+            $query = $this->db->prepare("
+                INSERT INTO posts
+                (post_title, post_message)
+                VALUES(?, ?)
+            ");
+            $query->execute([
+                $data["title"],
+                $data["content"]
+            ]);
+
+            
+        }
+
+    }
+
 }

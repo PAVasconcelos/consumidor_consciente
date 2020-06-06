@@ -5,6 +5,7 @@ require("views/subscribe.php");
 
 $subscribeModel = new Subscribe();
 
+
 if(isset($_POST["send"])) {
 
     $data = $_POST;

@@ -11,7 +11,7 @@
     }
 ?>
         <h1>Efectuar Login</h1>
-        <form method="post" action="/access">
+        <form method="post" action="/boss">
             <div>
                 <label for="username">Username</label>
                 <input id="username" type="text" name="username" maxlength="64" required>
