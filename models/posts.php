@@ -18,6 +18,18 @@ class Posts extends Base {
         return $posts;
     }
 
+    public function getPost() {
+        $query = $this->db->prepare("
+            SELECT post_id, post_title, post_message
+            FROM posts
+            WHERE post_id = ?
+        ");
+
+        $query->execute();
+
+        $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function createPost($data) {
         $data = $this->sanitizer($data);
         if (!empty($data["title"]) && !empty($data["content"])) {      
@@ -31,7 +43,6 @@ class Posts extends Base {
                 $data["content"]
             ]);
 
-            
         }
 
     }
@@ -46,6 +57,7 @@ class Posts extends Base {
         $result = $query->execute([ $id ]);
         
     }
+
 
 
 }

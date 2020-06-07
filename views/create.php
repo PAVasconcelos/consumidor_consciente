@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Criar Post</title>
+        <?php require("layouts/head.php")?>
     </head>
     <body>
 <?php
@@ -40,7 +41,7 @@
 ?>
 
         <table>
-            <caption><h2>Criar / Eliminar um Post</h2></caption>
+            <caption><h2>Editar / Eliminar um Post</h2></caption>
             <tr>
                 <th>Post_id</th>
                 <th>Title</th>

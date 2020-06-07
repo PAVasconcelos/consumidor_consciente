@@ -31,8 +31,14 @@ if(empty($_SESSION["name"])) {
 } else if($url_parts[2] === "delete") {
     $postModel->deletePost($url_parts[3]);
     header("Location: /boss/create");
+
+} else if($url_parts[2] === "edit") {
+    
+    require("views/preview.php");
+
 } else {
     header("Location: /boss/create");
+
 }
 
 if(isset($_POST["send"])) {
