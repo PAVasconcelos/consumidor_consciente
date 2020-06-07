@@ -6,6 +6,8 @@ require("models/posts.php");
 $userModel = new Users();
 $postModel = new Posts();
 
+$posts = $postModel->getList();
+
 if(empty($_SESSION["name"])) {
     require("views/login.php");
 
@@ -25,7 +27,7 @@ if(empty($_SESSION["name"])) {
 
 } else if($url_parts[2] === "posts") {
     require("views/home.php");
-    
+
 } else {
     header("Location: /boss/create");
 }

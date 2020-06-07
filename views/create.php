@@ -12,15 +12,16 @@
             ';
     }
 ?>
+        <h2>Criar um Post</h2>
         <form method="post" action="<?=$_SERVER["REQUEST_URI"]?>">
             <div>
-                <label>Título:
+                <label>Título:<br>
                     <input type="text" name="title" required>
                 </label>
             </div>
             <div>
                 <label>
-                    Conteúdo:
+                    Conteúdo:<br>
                     <textarea name="content" required maxlength="65535"></textarea>
                 </label>
             </div>
@@ -37,6 +38,37 @@
         echo '<a href="'. BASE_PATH .'">Voltar ao site!</a>';
     }
 ?>
+
+
+        <table>
+            <caption>Posts</caption>
+            <tr>
+                <th>Post_id</th>
+                <th>Title</th>
+            </tr>
+
+<?php
+foreach ($posts as $post) {
+    echo '
+    
+        <tr>
+            <td>' . $post["post_id"] . '</td>
+            <td>' . $post["post_title"] . '</td>
+            <td><button>Editar</button></td>
+            <td><button>Eliminar</button></td>
+
+    ';
+}
+?>
+
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+                <td><button>Editar</button></td>
+                <td><button>Eliminar</button></td>
+            </tr>
+
+        </table>
 
         </nav>
     </body>
