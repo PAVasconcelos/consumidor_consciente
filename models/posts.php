@@ -36,5 +36,16 @@ class Posts extends Base {
 
     }
 
+    public function deletePost($id) {
+        $query = $this->db->prepare("
+            DELETE
+            FROM posts
+            WHERE post_id = ?
+        ");
+
+        $result = $query->execute([ $id ]);
+        
+    }
+
 
 }

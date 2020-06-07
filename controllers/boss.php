@@ -28,6 +28,9 @@ if(empty($_SESSION["name"])) {
 } else if($url_parts[2] === "posts") {
     require("views/home.php");
 
+} else if($url_parts[2] === "delete") {
+    $postModel->deletePost($url_parts[3]);
+    header("Location: /boss/create");
 } else {
     header("Location: /boss/create");
 }

@@ -16,13 +16,13 @@
         <form method="post" action="<?=$_SERVER["REQUEST_URI"]?>">
             <div>
                 <label>Título:<br>
-                    <input type="text" name="title" required>
+                    <input type="text" name="title">
                 </label>
             </div>
             <div>
                 <label>
                     Conteúdo:<br>
-                    <textarea name="content" required maxlength="65535"></textarea>
+                    <textarea name="content" maxlength="65535"></textarea>
                 </label>
             </div>
             <div>
@@ -39,9 +39,8 @@
     }
 ?>
 
-
         <table>
-            <caption>Posts</caption>
+            <caption><h2>Criar / Eliminar um Post</h2></caption>
             <tr>
                 <th>Post_id</th>
                 <th>Title</th>
@@ -50,27 +49,16 @@
 <?php
 foreach ($posts as $post) {
     echo '
-    
         <tr>
             <td>' . $post["post_id"] . '</td>
             <td>' . $post["post_title"] . '</td>
-            <td><button>Editar</button></td>
-            <td><button>Eliminar</button></td>
-
+            <td><a href="'. BASE_PATH .'boss/edit/' . $post["post_id"] . '">Editar</a></td>
+            <td><a href="'. BASE_PATH .'boss/delete/' . $post["post_id"] . '">Eliminar</a></td>
     ';
 }
 ?>
 
-            <tr>
-                <td>January</td>
-                <td>$100</td>
-                <td><button>Editar</button></td>
-                <td><button>Eliminar</button></td>
-            </tr>
-
         </table>
-
         </nav>
     </body>
-
 </html>
