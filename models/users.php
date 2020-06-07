@@ -1,6 +1,6 @@
 <?php
 
-require("models/base.php");
+require_once("models/base.php");
 
 class Users extends Base {
 
@@ -8,18 +8,18 @@ class Users extends Base {
         $data = $this->sanitizer($data);
 
         if(
-            !empty($data["username"]) //&&
-            //!empty($data["password"]) &&
-            //mb_strlen($data["password"]) <= 1000
+            !empty($data["username"]) &&
+            !empty($data["password"]) &&
+            mb_strlen($data["password"]) <= 1000
         ) {
             $query = $this->db->prepare("
                 SELECT user_name 
                 FROM users
-                WHERE user_name = ?
+                WHERE user_password = ?
             ");
 
             $query->execute([
-                $data["username"]
+                $data["password"],
             ]);
 
             $user = $query->fetch(PDO::FETCH_ASSOC);

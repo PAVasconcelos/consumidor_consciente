@@ -1,6 +1,6 @@
 <?php
 
-require("models/base.php");
+require_once("models/base.php");
 
 class Posts extends Base {
 
@@ -18,7 +18,7 @@ class Posts extends Base {
         return $posts;
     }
 
-    public function creatPost($data) {
+    public function createPost($data) {
         $data = $this->sanitizer($data);
         if (!empty($data["title"]) && !empty($data["content"])) {      
             $query = $this->db->prepare("
@@ -35,5 +35,6 @@ class Posts extends Base {
         }
 
     }
+
 
 }
