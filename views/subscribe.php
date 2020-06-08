@@ -17,8 +17,6 @@
                 <button class="submit-button" type="submit" name="send">Subscrever!</button>
             </form>
         </div>
-
         <?php require("layouts/footer.php")?>
-        
     </body>
 </html>

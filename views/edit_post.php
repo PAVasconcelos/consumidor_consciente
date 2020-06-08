@@ -6,15 +6,15 @@
     </head>
     <body>
         <form method="POST" action="<?=$_SERVER["REQUEST_URI"]?>" enctype="multipart/form-data">
-            <div class="field-container display-flex flex-column">
+            <div class="">
                 <label for="title">Editar Título</label><br>
                 <input type="text" name="title" maxlength="200" autocomplete="off" value="<?=$post["post_title"]?>">
             </div>
-            <div class="field-container display-flex flex-column">
+            <div class="">
                 <label for="content">Editar Conteúdo</label><br>
-                    <textarea name="content" maxlength="65535"><?=$post["post_message"]?></textarea>
+                    <textarea name="message" maxlength="65535"><?=$post["post_message"]?></textarea>
             </div>
-            <div class="field-container submit-container">
+            <div class="">
                 <button class="create-btn" type="submit" name="send">Editar Artigo</button>
             </div>
             <nav>

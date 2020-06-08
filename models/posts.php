@@ -49,8 +49,22 @@ class Posts extends Base {
 
     }
 
-    public function updatePost() {
-        
+    public function editPost($data, $id) {
+        $query = $this->db->prepare("
+            UPDATE posts
+            SET
+                post_title = ?,
+                post_message = ?
+            WHERE post_id = ?
+        ");
+
+        $result = $query->execute([
+            $data["title"],
+            $data["message"],
+            $id
+        ]);
+
+        return $result;
     }
 
     public function deletePost($id) {
