@@ -18,16 +18,18 @@ class Posts extends Base {
         return $posts;
     }
 
-    public function getPost() {
+    public function getPost($post) {
         $query = $this->db->prepare("
             SELECT post_id, post_title, post_message
             FROM posts
             WHERE post_id = ?
         ");
 
-        $query->execute();
+        $query->execute([ $post ]);
 
-        $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+        $post = $query->fetch(PDO::FETCH_ASSOC);
+
+        return $post;
     }
 
     public function createPost($data) {
@@ -47,6 +49,10 @@ class Posts extends Base {
 
     }
 
+    public function updatePost() {
+        
+    }
+
     public function deletePost($id) {
         $query = $this->db->prepare("
             DELETE
@@ -57,7 +63,5 @@ class Posts extends Base {
         $result = $query->execute([ $id ]);
         
     }
-
-
 
 }

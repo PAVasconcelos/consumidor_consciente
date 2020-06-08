@@ -3,11 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>Login</title>
+        <?php require("layouts/head.php")?>
     </head>
     <body>
 <?php
     if(isset($message)) {
-        echo '<p role="alert">' . $message . '</p>';
+        echo'
+            <span>' . $message . '</span>
+        ';
     }
 ?>
         <h1>Efectuar Login</h1>

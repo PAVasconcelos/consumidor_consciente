@@ -33,8 +33,8 @@ if(empty($_SESSION["name"])) {
     header("Location: /boss/create");
 
 } else if($url_parts[2] === "edit") {
-    
-    require("views/preview.php");
+    $post = $postModel->getPost($url_parts[3]);
+    require("views/edit_post.php");
 
 } else {
     header("Location: /boss/create");
@@ -48,7 +48,9 @@ if(isset($_POST["send"])) {
         header("Location: /boss/create");
         
     }
+
 }
+
 
 //if($url_parts[2] === "creat" && !empty($_SESSION["name"]) ) {
 //    require("views/creat.php");
