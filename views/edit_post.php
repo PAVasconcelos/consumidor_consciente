@@ -2,7 +2,13 @@
 <html lang="pt">
     <head>
         <meta charset="utf-8">
-        <title>Login</title>
+        <title>Editar Post</title>
+        <?php require("layouts/head.php")?>        
+        <script>
+            tinymce.init({
+                selector: '#mytextarea'
+            });
+        </script>
     </head>
     <body>
         <form method="POST" action="<?=$_SERVER["REQUEST_URI"]?>" enctype="multipart/form-data">
@@ -12,10 +18,10 @@
             </div>
             <div class="">
                 <label for="content">Editar Conteúdo</label><br>
-                    <textarea name="message" maxlength="65535"><?=$post["post_message"]?></textarea>
+                    <textarea id="mytextarea" name="message" maxlength="65535"><?=$post["post_message"]?></textarea>
             </div>
             <div class="">
-                <button class="create-btn" type="submit" name="send">Editar Artigo</button>
+                <button class="create-btn" type="submit" name="send">Enviar alterações</button>
             </div>
             <nav>
                 <a href="<?=BASE_PATH?>boss/">Voltar à página Admin</a><br>

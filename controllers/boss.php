@@ -45,7 +45,7 @@ if(empty($_SESSION["name"])) {
 
 } else {
     header("Location: /boss/crud");
-
+    
 }
 
 if(isset($_POST["send"])) {

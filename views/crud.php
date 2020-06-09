@@ -4,6 +4,11 @@
         <meta charset="utf-8">
         <title>Criar Post</title>
         <?php require("layouts/head.php")?>
+        <script>
+            tinymce.init({
+                selector: '#mytextarea'
+            });
+        </script>
     </head>
     <body>
 <?php
@@ -13,33 +18,36 @@
             ';
     }
 ?>
-        <h2>Criar um Post</h2>
-        <form method="post" action="<?=$_SERVER["REQUEST_URI"]?>">
-            <div>
-                <label>Título:<br>
-                    <input type="text" name="title">
-                </label>
-            </div>
-            <div>
-                <label>
-                    Conteúdo:<br>
-                    <textarea name="content" maxlength="65535"></textarea>
-                </label>
-            </div>
-            <div>
-            <div>
-                <button type="submit" name="send">Criar</button>
-            </div>
-        </form>
-        <nav>
-            <a href="<?=BASE_PATH?>boss/logout">logout</a><br>
-
+        <div>
+            <img class="cc-img-crud" src="../img/small_logo.png" alt="Consumidor Consciente">
+        </div>
+        <div class="creat-post">
+            <h2>Criar um Post</h2>
+            <form method="post" action="<?=$_SERVER["REQUEST_URI"]?>">
+                <div>
+                    <label>Título:<br>
+                        <input required type="text" name="title">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Conteúdo:<br>
+                        <textarea required id="mytextarea" name="content" maxlength="65535"></textarea>
+                    </label>
+                </div>
+                <div>
+                <div>
+                    <button type="submit" name="send">Criar</button>
+                </div>
+            </form>
+            <nav>
+                <a href="<?=BASE_PATH?>boss/logout">logout</a><br>
+        </div>
 <?php
     if(!empty($_SESSION["name"])) {
         echo '<a href="'. BASE_PATH .'">Voltar ao site!</a>';
     }
 ?>
-
         <table>
             <caption><h2>Editar / Eliminar um Post</h2></caption>
             <tr>

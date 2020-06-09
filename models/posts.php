@@ -6,9 +6,9 @@ class Posts extends Base {
 
     public function getList() {
         $query = $this->db->prepare("
-            SELECT post_id, post_title, post_date
+            SELECT post_id, post_title, post_message, post_date
             FROM posts
-            ORDER BY post_date ASC
+            ORDER BY post_date DESC
         ");
 
         $query->execute();
@@ -33,7 +33,7 @@ class Posts extends Base {
     }
 
     public function createPost($data) {
-        $data = $this->sanitizer($data);
+        //$data = $this->sanitizer($data);
         if (!empty($data["title"]) && !empty($data["content"])) {      
             $query = $this->db->prepare("
                 INSERT INTO posts

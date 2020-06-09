@@ -410,6 +410,18 @@ p {
 
 }
 
+/*
+	ADMIN - CRUD 
+**/
+	.cc-img-crud {
+		width: 400px;
+		margin: 0 auto;
+		display: flex;
+	}
+
+	
+
+
 @media only screen and (max-width: 1275px) {
 	.container {
 		margin-right: 15px;

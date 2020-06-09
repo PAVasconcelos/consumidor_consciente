@@ -8,19 +8,22 @@
     </head>
     <body>
         <?php require("layouts/header.php");?>
-        <ul>
           
-        <?php
-            foreach($posts as $post) {
-        ?>
-            <div class="posts">
-              <div class="post-id"><?php echo $post["post_id"]; ?></div>
-              <div class="post-title"><?php echo $post["post_title"]; ?></div>
-        <?php
-            }
-        ?>
-
-        </ul>
+<?php
+    foreach($posts as $post) {
+?>
+        <article class="container">
+            <h2><?php echo $post["post_title"]; ?></h2>
+            <div class="browser">
+                <div>
+                     <?php echo $post["post_message"] ?>       
+                </div>
+                <time>De:<?php echo $post["post_date"] ?></time>    
+            </div>
+        </article>
+<?php
+    }
+?>
         
         <article class="container">
             <h1>10 melhores carros a baixo 4000€</h1>
