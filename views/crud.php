@@ -18,12 +18,12 @@
             ';
     }
 ?>
-        <div>
+        <div class="pseudo-header">
             <img class="cc-img-crud" src="../img/small_logo.png" alt="Consumidor Consciente">
         </div>
         <nav class="nav-crud">
-            <a href="<?=BASE_PATH?>boss/logout">logout</a>
-            <a class="end" href="<?= BASE_PATH?>">Voltar ao site!</a>
+            <a href="<?=BASE_PATH?>boss/logout">Logout</a>
+            <a class="end" href="<?= BASE_PATH?>">Voltar ao site</a>
         </nav>
         <div class="creat-post">
             <p class="crudh">Criar um Post</p>
@@ -46,8 +46,8 @@
         <table class="crud-table">
             <caption><p>Editar / Eliminar um Post</p></caption>
             <tr>
-                <th>Post_id</th>
-                <th>Title</th>
+                <th>Post Nº</th>
+                <th>Título</th>
             </tr>
 
 <?php
