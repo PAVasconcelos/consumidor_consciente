@@ -21,35 +21,30 @@
         <div>
             <img class="cc-img-crud" src="../img/small_logo.png" alt="Consumidor Consciente">
         </div>
+        <nav class="nav-crud">
+            <a href="<?=BASE_PATH?>boss/logout">logout</a>
+            <a class="end" href="<?= BASE_PATH?>">Voltar ao site!</a>
+        </nav>
         <div class="creat-post">
-            <h2>Criar um Post</h2>
+            <p class="crudh">Criar um Post</p>
             <form method="post" action="<?=$_SERVER["REQUEST_URI"]?>">
                 <div>
-                    <label>Título:<br>
+                    <label>Título:</label><br>
                         <input required type="text" name="title">
-                    </label>
                 </div>
                 <div>
-                    <label>
-                        Conteúdo:<br>
+                    <label>Conteúdo:</label><br>
                         <textarea required id="mytextarea" name="content" maxlength="65535"></textarea>
-                    </label>
                 </div>
                 <div>
                 <div>
                     <button type="submit" name="send">Criar</button>
                 </div>
             </form>
-            <nav>
-                <a href="<?=BASE_PATH?>boss/logout">logout</a><br>
-        </div>
-<?php
-    if(!empty($_SESSION["name"])) {
-        echo '<a href="'. BASE_PATH .'">Voltar ao site!</a>';
-    }
-?>
-        <table>
-            <caption><h2>Editar / Eliminar um Post</h2></caption>
+            <hr>
+        </div>       
+        <table class="crud-table">
+            <caption><p>Editar / Eliminar um Post</p></caption>
             <tr>
                 <th>Post_id</th>
                 <th>Title</th>
@@ -61,8 +56,9 @@ foreach ($posts as $post) {
         <tr>
             <td>' . $post["post_id"] . '</td>
             <td>' . $post["post_title"] . '</td>
-            <td><a href="'. BASE_PATH .'boss/edit/' . $post["post_id"] . '">Editar</a></td>
-            <td><a href="'. BASE_PATH .'boss/delete/' . $post["post_id"] . '">Eliminar</a></td>
+            <td class="less"><a href="'. BASE_PATH .'boss/edit/' . $post["post_id"] . '">Editar</a></td>
+            <td class="less"><a href="'. BASE_PATH .'boss/delete/' . $post["post_id"] . '">Eliminar</a></td>
+        </tr>
     ';
 }
 ?>

@@ -419,7 +419,111 @@ p {
 		display: flex;
 	}
 
-	
+	.creat-post {
+		margin: 0 auto;
+		width: 1300px;
+	}
+
+	.creat-post input {
+		width: 100%;
+		height: 30px;
+	}
+
+	.creat-post button { 
+		background-color: #4CAF50; /* Green */
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 10px;
+		margin-bottom: 50px;
+	}
+
+	.creat-post label {
+		font-size: 20px;
+	}
+
+	.creat-post a {
+		background-color: #f44336; /* Green */
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 10px;
+	}
+
+	.nav-crud{
+		display: flex;
+		margin: 0 auto;
+		width: 1200px;
+		justify-content: center;
+		margin-top: 25px;
+		margin-bottom: 30px;
+	}
+
+	.nav-crud a {
+		background-color: #008CBA; /* Green */
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 10px;
+	}
+
+	.end {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+	}
+
+	.crud-table {
+  		border-collapse: collapse;
+		margin: 0 auto;
+		width: 1300px;
+		text-align: center;
+		background-color: white ;
+		border-collapse: collapse;
+		padding: 3px;
+	}
+
+	.crud-table p {
+		margin: 15px;
+		text-align: left;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.crudh {
+		margin: 15px;
+		text-align: left;
+		font-size: 25px;
+		font-weight: bold;
+	}
+
+	tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	th {
+		font-size: 17px;
+		padding: 5px;
+	}
+
+	.less {
+		width: 90px;
+	}
+
+
+
 
 
 @media only screen and (max-width: 1275px) {
