@@ -11,22 +11,28 @@ $posts = $postModel->getList();
 if(empty($_SESSION["name"])) {
     require("views/login.php");
 
+    if(isset($_POST["send"])) {
+        $response = $userModel->login($_POST);
+    
+        if($response) {
+            header("Location: /boss/crud");
+            
+        }
+    
+    }
+
 } else if($url_parts[2] === "crud" && !empty($_SESSION["name"]) ) {
     require("views/crud.php");
 
     if(isset($_POST["send"])) {
-
         $data = $_POST;
-        
         $post_id = $postModel->createPost( $data );
+        header("Refresh:0");
     }
 
 } else if($url_parts[2] === "logout") {
     session_destroy();
     header("Location: /boss");
-
-} else if($url_parts[2] === "posts") {
-    require("views/home.php");
 
 } else if($url_parts[2] === "delete") {
     $postModel->deletePost($url_parts[3]);
@@ -45,15 +51,4 @@ if(empty($_SESSION["name"])) {
 
 } else {
     header("Location: /boss/crud");
-    
-}
-
-if(isset($_POST["send"])) {
-    $response = $userModel->login($_POST);
-
-    if($response) {
-        header("Location: /boss/crud");
-        
-    }
-
 }

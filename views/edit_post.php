@@ -29,7 +29,7 @@
                 <div class="">
                     <button class="create-btn" type="submit" name="send">Enviar alterações</button>
                 </div>
-                <nav class="edit-nav">
+                <nav class="edit">
                     <a href="<?=BASE_PATH?>boss/">Voltar à página Admin</a><br>
                     <a href="<?=BASE_PATH?>">Voltar ao Site</a>
                 </nav>

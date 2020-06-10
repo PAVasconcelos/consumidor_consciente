@@ -348,7 +348,7 @@ p {
 }
 
 .creat-post button { 
-	background-color: #4CAF50; /* Green */
+	background-color: #4CAF50; 
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -369,7 +369,7 @@ p {
 }
 
 .creat-post a {
-	background-color: #f44336; /* Green */
+	background-color: #f44336;
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -390,7 +390,7 @@ p {
 }
 
 .nav-crud a {
-	background-color: #008CBA; /* Green */
+	background-color: #008CBA; 
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -416,6 +416,16 @@ p {
 	border-collapse: collapse;
 	padding: 3px;
 	margin-bottom: 50px;
+	align-items: center;
+}
+
+.crud-table tr {
+	align-items: flex-end;
+}
+
+.crud-table td {
+	font-size: 15px;
+	text-decoration: none;
 }
 
 .crud-table p {
@@ -425,6 +435,10 @@ p {
 	font-weight: bold;
 }
 
+.less {
+	width: 150px;
+}
+
 .crudh {
 	margin: 15px;
 	text-align: left;
@@ -432,17 +446,27 @@ p {
 	font-weight: bold;
 }
 
-tr:nth-child(even) {
-	background-color: #f2f2f2;
+.crud-table a {
+	text-decoration: none;
+	background-color: #f44336;
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px;
+	width: 120px;
 }
 
-th {
-	font-size: 17px;
+.crud-table th {
+	font-size: 20px;
 	padding: 5px;
 }
 
-.less {
-	width: 90px;
+tr:nth-child(even) {
+	background-color: #f2f2f2;
 }
 
 a:hover {

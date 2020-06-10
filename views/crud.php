@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Criar Post</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
         <?php require("layouts/head.php")?>
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>             
         <script>
             tinymce.init({
                 selector: '#mytextarea'
@@ -26,23 +29,21 @@
             <a class="end" href="<?= BASE_PATH?>">Voltar ao site</a>
         </nav>
         <div class="creat-post">
-            <p class="crudh">Criar um Post</p>
-            <form method="post" action="<?=$_SERVER["REQUEST_URI"]?>">
+        <form method="POST" action="<?=$_SERVER["REQUEST_URI"]?>" enctype="multipart/form-data">
                 <div>
-                    <label>Título:</label><br>
-                        <input required type="text" name="title">
+                    <label for="title">Título:</label><br>
+                    <input type="text" name="title" maxlength="200" autocomplete="off">
                 </div>
-                <div>
-                    <label>Conteúdo:</label><br>
-                        <textarea required id="mytextarea" name="content" maxlength="65535"></textarea>
+                <div class="">
+                    <label for="content">Conteúdo:</label><br>
+                        <textarea id="mytextarea" name="content" maxlength="65535"></textarea>
                 </div>
-                <div>
-                <div>
-                    <button type="submit" name="send">Criar</button>
+                <div class="">
+                    <button class="create-btn" type="submit" name="send">Criar Post</button>
                 </div>
             </form>
-            <hr>
-        </div>       
+        </div>     
+          
         <table class="crud-table">
             <caption><p>Editar / Eliminar um Post</p></caption>
             <tr>
@@ -56,8 +57,8 @@ foreach ($posts as $post) {
         <tr>
             <td>' . $post["post_id"] . '</td>
             <td>' . $post["post_title"] . '</td>
-            <td class="less"><a href="'. BASE_PATH .'boss/edit/' . $post["post_id"] . '">Editar</a></td>
-            <td class="less"><a href="'. BASE_PATH .'boss/delete/' . $post["post_id"] . '">Eliminar</a></td>
+            <td href="'. BASE_PATH .'boss/edit/' . $post["post_id"] . '" class="less"><a href="'. BASE_PATH .'boss/edit/' . $post["post_id"] . '">Editar</a></td>
+            <td href="'. BASE_PATH .'boss/delete/' . $post["post_id"] . '" class="less"><a href="'. BASE_PATH .'boss/delete/' . $post["post_id"] . '">Eliminar</a></td>
         </tr>
     ';
 }
